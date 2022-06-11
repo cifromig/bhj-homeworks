@@ -1,6 +1,7 @@
 body {
   font-family: Helvetica;
   font-weight: 300;
+  
 }
 .modal {
   display: none;
@@ -16,6 +17,7 @@ body {
 
 .modal_active {
   display: flex;
+
 }
 
 .modal__close_times {
@@ -24,6 +26,8 @@ body {
   top: -2px;
   font-size: 25px;
   cursor: pointer;
+  /* display: none; */
+  
 }
 
 .modal__content {
@@ -37,6 +41,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .btn {
@@ -44,11 +49,14 @@ body {
   color: whitesmoke;
   padding: 10px 20px;
   border-radius: 2px;
+
 }
 
 .btn_danger {
   background: red;
+
 }
 .btn_success {
   background: green;
+
 }
