@@ -1,18 +1,31 @@
 let menuLinks = document.getElementsByClassName("menu__item")
 
+function func2 (event)  {
+      event.preventDefault() 
+      // event.stopPropagation()
+      // const link = event.currentTarget; 
+   //console.log (this)
+if(this.children.length >1) {
+   this.children[1].classList.add ("menu_active")
+   } 
+}
+
+
 for(let i=0; i< menuLinks.length; i++) {
      // menuLinks[i].addEventListener("mouseenter", showSub, false);
      // menuLinks[i].addEventListener("mouseleave", hideSub, false);
-      menuLinks[i].addEventListener("click", func2);
-
+      
+   //   menuLinks[i].onclick = func2 //("click", func2);
+     
+    menuLinks[i].addEventListener("click", func2);
+      // menuLinks[i].onclick = func2 () {
+      //    if(this.children.length >1) {
+      //       this.children[1].classList.add ("menu_active")
+      //       } 
+      // };
     }
 
-   function func2 ()  {
-        //console.log (this)
-    if(this.children.length >1) {
-        this.children[1].classList.add ("menu_active")
-        } 
-    }
+   
 
 //  function showSub(e) {
 //      // console.log (this)
