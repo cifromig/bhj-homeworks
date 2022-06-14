@@ -17,14 +17,43 @@ class Game {
   }
 
   registerEvents() {
+    
+
+    document.addEventListener('keydown', (sumbolN) => {
+
+      let symbolCurrent = this.currentSymbol.textContent
+      // console.log (symbolCurrent)
+      if (sumbolN.key === symbolCurrent) {
+              this.success();
+            }
+            else {
+              this.fail();
+            }
+          
+        });
+
+    }
+
     /*
       TODO:
       Написать обработчик события, который откликается
       на каждый введённый символ.
       В случае правильного ввода слова вызываем this.success()
       При неправильном вводе символа - this.fail();
-     */
-  }
+     
+      * Допишите метод *registerEvents*, в котором необходимо задать обработчик
+      нажатия клавиш. Принцип работы метода:
+      
+      1. Получить DOM-элемент текущего символа, который необходимо ввести (свойство *this.currentSymbol*)
+      2. Получить символ, который был введён с клавиатуры. 
+      3. Если два символа одинаковые, вызывать метод *this.success*
+      4. Если два символа отличаются, вызвать метод *this.fail*
+      5. При сравнении регистр не должен быть важен (а или А)
+      
+      _Обратите внимание на то, что именно записывается в this.currentSymbol.
+      Вспомните в чем различия между keydown и keyup_
+      */
+  
 
   success() {
     this.currentSymbol.classList.add('symbol_correct');
