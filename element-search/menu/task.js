@@ -1,12 +1,13 @@
 let menuLinks = document.getElementsByClassName("menu__item")
 
 function func2 (event)  {
-      event.preventDefault() 
+
       // event.stopPropagation()
       // const link = event.currentTarget; 
    //console.log (this)
 if(this.children.length >1) {
-   this.children[1].classList.add ("menu_active")
+   event.preventDefault() 
+   this.children[1].classList.toggle("menu_active")
    } 
 }
 
