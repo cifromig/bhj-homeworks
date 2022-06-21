@@ -67,7 +67,30 @@ class Autocomplete {
     this.list.innerHTML = html.join('');
   }
 
-  getMatches( text ) {
+  getMatches( texts ) {
+    // console.log (this.input.length)
+    let ArrayVal = []
+    let hhh = this.input.length
+      for (let i=0; i < this.input.length; i++ ) {
+      console.log (this.input[i].value  + " : " +this.input[i].innerHTML )
+
+      let text = this.input[i].innerHTML
+      let value =  i     
+
+      //var str = "The quick brown fox jumps over the lazy dog."
+    
+      // Проверяем, существует ли подстрока "fox" внутри строки
+      let index = text.indexOf(texts); 
+
+
+      if(index !== -1){
+        ArrayVal.push ({text, value})
+        } 
+        else{
+            console.log("Ненайдно");
+        }
+      }
+      console.log (ArrayVal)
     /*
       TODO: этот метод нужно дописать
       text - фраза, которую вводят в поле поиска
@@ -81,12 +104,8 @@ class Autocomplete {
         value: 'Содержимое атрибута value'
       }
     */
-    return [
-      {
-        text: 'Чубакка',
-        value: '1'
-      }
-    ];
+    return ArrayVal;
+
   }
 }
 
